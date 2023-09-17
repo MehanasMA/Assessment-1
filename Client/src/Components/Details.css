@@ -1,0 +1,38 @@
+.table-container {
+	margin: 0 auto;
+	width: 70%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.header-row {
+	background-color: #afa983;
+	color: white;
+}
+
+.table-header {
+	text-align: center;
+	background-color: #626b5d;
+	height: 50px;
+}
+
+th,
+td {
+	border: 1px solid #1d1212;
+	padding: 15px;
+	text-align: left;
+}
+
+th {
+	background-color: #b8a0a0;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
