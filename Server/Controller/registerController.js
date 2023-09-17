@@ -1,4 +1,5 @@
 const User = require('../Model/registerModel')
+const Location =require('../Model/locationModel')
 
 const register = async (req, res) => {
     try {
@@ -36,6 +37,18 @@ const register = async (req, res) => {
 }
 
 
+const loction=async (req,res)=>{
+    try{
+        const location = await Location.find();
+
+    console.log("countries", data);
+    res.status(200).json(location);
+        
+    } catch(error){
+        consol.log('Error',error)
+        return res.status(500).json({error:'Server error'})
+    }
+}
 
 const details = async (req, res) => {
     try {
