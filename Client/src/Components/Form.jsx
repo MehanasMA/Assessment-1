@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
 
-// export function GetPlaces(){
 	const countries=[
 		{
 			name:"India",
