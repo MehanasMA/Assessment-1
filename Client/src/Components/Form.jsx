@@ -5,70 +5,26 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
+	
+const [countries, setCountries] = useState([]);
 
-	const countries=[
-		{
-			name:"India",
-			states:[
-				{
-					name:"Kerala",
-					cities:["Kannur","Calicut","Kasaegode","Wayanad"]
-				},
-				{
-                     name:"Tamilnadu",
-					cities:["Chennai","Coimbatore","Thiruchi","Madras"]
-				},
-				{
-                     name:"Karnataka",
-					cities:["Mysuru","Bangaloru","Hassan","Haveri"]
-				},
-			]
-		},
-		{
+	 useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/registerRoute/location');
+        const responseData = await response.json();
+        setCountries(responseData); 
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
 
-			name:"USA",
-			states:[
-				{
-					name:"Texas",
-					cities:["Austin","Dallas","Houston","Plano"]
-				},
-				{
-                     name:"Columbia",
-					cities:["Cartegina","Bogota","Medellin","Mompox"]
-				},
-				{
-                     name:"Hawai",
-					cities:["Hilo","Hawi","Kailua","Lahaina"]
-				},
-			]
-		},
-		{
+    fetchData();
+  }, []); 
 
-			name:"UK",
-			states:[
-				{
-					name:"London",
-					cities:["Austin,Dallas,Houston,Plano"]
-				},
-				{
-                     name:"Abcd",
-					cities:["Brazil,Argentina,Peru"]
-				},
-				{
-                     name:"Haw",
-					cities:["Goa","J&k","Qatar","Dubai"]
-				},
-			]
-		},
-
-	];
-// 	return countries
-
-// }
+	
 
 	const navigate = useNavigate();
-	//   const countries = GetPlaces(); // Access the countries array
-
    const [country,setCountry]=useState("")
    const [state,setState]=useState("")
    const [city,setCity]=useState("")
