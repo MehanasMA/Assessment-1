@@ -37,7 +37,7 @@ const register = async (req, res) => {
 }
 
 
-const loction=async (req,res)=>{
+const loctions=async (req,res)=>{
     try{
         const location = await Location.find();
 
@@ -68,5 +68,6 @@ const details = async (req, res) => {
 
 module.exports = {
     details,
-    register
+    register,
+    loctions
 };
